@@ -17,6 +17,11 @@ import SwiftUI
 // try binding the user from main view to user from detail view
 // or call the update User function onAppear from the main view
 
+
+// FINDINGS: when something on the main view changes, the viewmodel of the detailview gets reinitialized, not sure why
+// onAppear(refresh main view data) fixes the "issue" but I'd say that bad practice because that adds logic back into the view
+// I think binding the detail view and the main view is the way to go but that would kinda go agains the "one VM for one view i.e. 1-1 mapping rule"
+
 struct UserMainView: View {
 //    @StateObject var viewModel = ViewModel()
     @ObservedObject var viewModel = ViewModel()
