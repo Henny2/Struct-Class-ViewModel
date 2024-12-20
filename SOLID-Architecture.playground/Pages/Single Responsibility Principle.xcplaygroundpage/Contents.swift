@@ -124,6 +124,7 @@ struct Product {
     let price: Double
 }
 
+
 struct Invoice {
     var products: [Product]
     let id = NSUUID().uuidString

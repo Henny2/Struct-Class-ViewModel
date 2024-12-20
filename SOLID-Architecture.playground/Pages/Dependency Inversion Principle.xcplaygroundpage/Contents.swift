@@ -74,7 +74,7 @@ struct ApplePayPayment: PaymentMethod {
 
 
 
-// now our high level module (PaymentDIP) depends on an abstraction (protocol) instead of low level modules (low level structs)
+// now our high level module (PaymentDIP) depends on an abstraction (protocol) instead of low level modules (low level structs) 
 struct PaymentDIP {
     let paymentMethod: PaymentMethod
     
@@ -84,5 +84,5 @@ struct PaymentDIP {
 }
 
 let stripe = StripePayment()
-let paymentDIP = PaymentDIP(paymentMethod: strip)
+let paymentDIP = PaymentDIP(paymentMethod: stripe)
 paymentDIP.makePayment(amount: 100)
