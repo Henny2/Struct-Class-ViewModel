@@ -30,9 +30,9 @@ extension UserMainView {
         }
         
         
-        func refresh() {
-            getUser(id: "123")
-        }
+//        func refresh() {
+//            getUser(id: "123")
+//        }
         
         func changeUserName(id: String, newName: String){
             UserService.shared.saveUserName(userID: id, newName: newName)

@@ -41,6 +41,7 @@ struct UserMainView: View {
 //            .onAppear(perform: viewModel.refresh)
 
             NavigationLink("Go to detail view") {
+//                UserDetailView(viewModel: viewModel)
                 UserDetailView(viewModel: viewModel)
             }
         }
