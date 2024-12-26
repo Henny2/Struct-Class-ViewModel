@@ -10,27 +10,18 @@ import SwiftUI
 
 extension UserMainView {
     class ViewModel: ObservableObject {
-        @ObservedObject var userService = UserService.shared
-        @Published var user: User
+        let userService: UserService = UserService.shared
+        @Published var sharedUser: User = User(name: "Henny", age: 28)
         
-        init() {
-            if let user = UserService.shared.sharedUser {
-                self.user = user
-            }
-            else {
-                user = User(name: "Example", age: 99)
-            }
-        }
+        init() {}
         
         func getUser() {
-            userService.getUser()
-            if let user = userService.sharedUser {
-                self.user = user
-            }
+            sharedUser = userService.getUser()
         }
         
         func changeUserName(newName: String) {
-            self.userService.changeUserName(newName: newName)
+            userService.changeUserName(newName: newName)
+            self.getUser()
         }
         
     }
